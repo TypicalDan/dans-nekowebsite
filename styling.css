@@ -29,12 +29,12 @@ body {
     height: 75%;
     width: calc(60% + 2px);
     min-width: 600px;
-    grid-template-columns: 0.5fr 1fr 1fr;
+    grid-template-columns: 0.75fr 1fr 1fr;
     grid-template-rows: 0.25fr 1fr 0.05fr;
     grid-template-areas:
-        "status      title   title"
+        "status     title   title"
         "sideBar    main    main"
-        "other      other   other"
+        "sideBar    version version"
     ;
     grid-gap: 0.4rem;
 }
@@ -68,7 +68,7 @@ main{
     overflow-y: scroll;
     grid-area: status;
     scrollbar-width: none;
-    padding-left: 30px;
+    padding-left: 10px;
     background-color: rgba(0, 0, 20, 0.5);
     margin: 5px;
     margin-bottom: -5px;
@@ -91,6 +91,21 @@ main{
         10px
         10px
     ;
+}
+
+.version {
+    grid-area: version;
+    border: 5px solid #330066;
+    padding: 5px;
+    padding-left: 20px;
+    background-color: #100020;
+    box-shadow:
+        rgba(0, 0, 20, 0.5)
+        10px
+        10px
+    ;
+    margin-right: 5px;
+    margin-bottom: -10px;
 }
 
 /** ===== Text ===== */
@@ -125,6 +140,8 @@ p {
     font-size: 22px;
     letter-spacing: 2px;
     word-spacing: -5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     line-height: 20px;
     font-weight: 600;
     text-decoration: none;
@@ -151,6 +168,10 @@ p.foot {
     margin-top: -2px;
     margin-left: 5px;
     color: #000000;
+}
+
+p.versiontext {
+    font-size: 20px;
 }
 
 /** ===== Frame ===== */
