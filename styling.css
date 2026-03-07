@@ -1,13 +1,21 @@
 /** ===== IMPORTS ===== */
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
-@import url('https://fonts.googleapis.com/css?family=VT323');
+
+@import url('https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
 
 @font-face {
     font-family: 'Bitmgothic';
     src: url(./Bitmgothic/Bitmgothic.ttf) format(truetype)
 }
 
+/*
+@font-face {
+    font-family: 'galmuri9';
+    src: url(./"galmuri9"/"galmuri9".tff) format(truetype)
+}
+*/
+
 /** ===== General ===== */
+
 body {
     background:
         url("lib/stars.gif")
@@ -24,6 +32,7 @@ body {
 }
 
 /** ===== Layout ===== */
+
 .center {
     display: flex;
     justify-content: center;
@@ -41,7 +50,7 @@ body {
     grid-template-areas:
         "status     title           title"
         "sideBar    main            main"
-        "sideBar    musicplayer     musicplayer"
+        "sideBar    controls     controls"
     ;
     grid-gap: 0.4rem;
 }
@@ -105,8 +114,8 @@ main {
     ;
 }
 
-.musicplayer {
-    grid-area: musicplayer;
+.controls {
+    grid-area: controls;
     border: 5px solid #330066;
     padding: 0px;
     background-color: #100020;
@@ -119,6 +128,7 @@ main {
 }
 
 /** ===== Text ===== */
+
 h1 {
     font-family: "Bitmgothic", cursive;
     display: inline;
@@ -135,10 +145,10 @@ h1 {
 }
 
 p {
-    font-family: VT323, monospace;
-    font-size: 22px;
-    letter-spacing: 2px;
-    word-spacing: -5px;
+    font-family: "galmuri9", sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    word-spacing: -1px;
     margin-top: 0px;
     margin-bottom: 0px;
     line-height: 20px;
@@ -155,8 +165,8 @@ p {
 }
 
 h2 {
-    font-family: VT323, monospace;
-    font-size: 28px;
+    font-family: "galmuri9", sans-serif;
+    font-size: 21px;
     letter-spacing: 2px;
     word-spacing: -5px;
     margin-top: 0px;
@@ -175,8 +185,8 @@ h2 {
 }
 
 h3 {
-    font-family: VT323, monospace;
-    font-size: 24px;
+    font-family: "galmuri9", sans-serif;
+    font-size: 16px;
     letter-spacing: 2px;
     word-spacing: -5px;
     margin-top: 0px;
@@ -203,14 +213,15 @@ span.system-brr {      color: rgb(255, 0, 0);}
 span.system-zap {      color: rgb(255, 0, 0);}
 
 p.foot {
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 400;
     margin-top: -2px;
     margin-left: 5px;
     color: #000000;
 }
 
-/** ==== WebAmp Location **/
+/** ==== WebAmp Location */
+
 .webampLocation {
     content: "";
     position: fixed;
@@ -254,6 +265,7 @@ p.foot {
 }
 
 /** ===== Scrollbar ===== */
+
   /*? Firefox */
   * {
     scrollbar-width: auto;
