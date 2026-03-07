@@ -20,6 +20,7 @@ TODO: Figure out how to do statuses (possibly just assume based on the date)
 <head>
 <!-- IMPORTS -->
 <link rel="stylesheet" href="styling.css">
+<link rel="stylesheet" href="audioPlayer.css">
 <script type="text/javascript" src="jquery-3.3.1.js"></script>
 <script src="js/YourExternalJQueryScripts.js"></script>
 
@@ -30,6 +31,9 @@ TODO: Figure out how to do statuses (possibly just assume based on the date)
 <!-- BODY -->
 <body>
 <div class="frame">
+    <div class="webampLocation">
+        <div id="app"></div>
+    </div>
     <div class="center">
         <div class="grid">
             <div class="status">
@@ -47,7 +51,7 @@ TODO: Figure out how to do statuses (possibly just assume based on the date)
             </div>
             <div class="title">
                 <div class="logo">
-                    <h1>Typical</h1><br><h1 class="dan">Dan</h1>
+                    <h1>Typical Dan</h1>
                 </div>
             </div>
             <div class="sideBar">
@@ -99,16 +103,82 @@ TODO: Figure out how to do statuses (possibly just assume based on the date)
                     </div>
                 </div>
             </main>
-            <div class="version">
-                <p class="versiontext">v0.1a | 09/12/2025 22:39 GMT</p>
+            <div class="musicplayer">
             </div>
         </div>
     </div>
 </div>
 <div class="footer">
-    <p class="foot">© 2025 TypicalDan | Hosted by Nekoweb</p>
+    <p class="foot">v0.1a | Updated 09/12/2025 22:39 GMT | Hosted by Nekoweb</p>
 </div>
 </tr>
 </table>
+<script type="module">
+// Import from the source
+import Webamp from "https://unpkg.com/webamp@^2";
+
+// Init() a webamp
+const webamp = new Webamp({
+    initialTracks: [
+        // SONGS GO HERE
+        {
+            metaData: {artist: "VocaloKAT & Aku P", title: "Affection Addiction",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/1.%20Affection%20Addiction.mp3",
+        },
+        {
+            metaData: {artist: "lexycat", title: "glitter ♪ ₊˚♬ Nightcore",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/2.%20Glitter.mp3",
+        },
+        {
+            metaData: {artist: "Bring Me the Horizon", title: "Drown",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/3.%20Drown.mp3",
+        },
+        {
+            metaData: {artist: "Jamie Paige", title: "BIRDBRAIN",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/4.%20BIRDBRAIN.mp3",
+        },
+        {
+            metaData: {artist: "Tree Palm", title: "i love you la la la",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/5.%20I%20Love%20You%20La%20La%20La.mp3",
+        },
+        {
+            metaData: {artist: "yeule", title: "Dudu",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/6.%20Dudu.mp3",
+        },
+        {
+            metaData: {artist: "NANAOAKARI", title: "逆走少女 - Gyakusou Girl",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/7.%20Gyakusou%20Girl.mp3",
+        },
+        {
+            metaData: {artist: "BAMBEE", title: "Online",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/8.%20Online.mp3",
+        },
+        {
+            metaData: {artist: "System Of A Down", title: "Chic 'N' Stu",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/9.%20Chic%20'N'%20Stu.mp3",
+        },
+        {
+            metaData: {artist: "Clean Bandit Feat. Jess Glynne", title: "Rather Be",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/10.%20Rather%20Be.mp3",
+        },
+        {
+            metaData: {artist: "All Time Low", title: "Therapy",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/11.%20Therapy.mp3",
+        },
+    ],
+    initialSkin: {
+        url: "https://file.garden/aatC7NfiM0cO88gC/acid-purple.wsz"
+    }
+});
+
+// Renders it when ready
+webamp.renderWhenReady(document.getElementById("app"));
+</script>
 </body>
 </html>
+
+<!-- THINGS I WANNA ADD -->
+ Status Cafe (https://status.cafe) | imood (https://www.imood.com)
+ 3 : 1 ratio on main page
+
+ Website Buttons

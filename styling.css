@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 @import url('https://fonts.googleapis.com/css?family=VT323');
 
+@font-face {
+    font-family: 'Bitmgothic';
+    src: url(./Bitmgothic/Bitmgothic.ttf) format(truetype)
+}
+
 /** ===== General ===== */
 body {
     background:
@@ -10,10 +15,12 @@ body {
         repeat
     ;
     margin: 0px;
-    padding: 0px;
+    padding: 0px; 
     height: 100vh;
     width: 100vw;
+    position: absolute;
     overflow-x: hidden;
+    animation: bgScroll 10s linear infinite;
 }
 
 /** ===== Layout ===== */
@@ -26,15 +33,15 @@ body {
 
 .grid {
     display: grid;
-    height: 75%;
+    height: 80%;
     width: calc(60% + 2px);
     min-width: 600px;
     grid-template-columns: 0.75fr 1fr 1fr;
     grid-template-rows: 0.25fr 1fr 0.05fr;
     grid-template-areas:
-        "status     title   title"
-        "sideBar    main    main"
-        "sideBar    version version"
+        "status     title           title"
+        "sideBar    main            main"
+        "sideBar    musicplayer     musicplayer"
     ;
     grid-gap: 0.4rem;
 }
@@ -98,46 +105,33 @@ main {
     ;
 }
 
-.version {
-    grid-area: version;
+.musicplayer {
+    grid-area: musicplayer;
     border: 5px solid #330066;
-    padding: 5px;
-    padding-left: 20px;
+    padding: 0px;
     background-color: #100020;
     box-shadow:
         rgba(0, 0, 20, 0.5)
         10px
         10px
     ;
-    margin-right: 5px;
-    margin-bottom: -20px;
+    margin-right: 10px;
 }
 
 /** ===== Text ===== */
 h1 {
-    font-family: "Press Start 2P", cursive;
+    font-family: "Bitmgothic", cursive;
     display: inline;
-    font-size: 32px;
+    font-size: 92px;
     letter-spacing: 1px;
     word-spacing: 0px;
     line-height: 50px;
-    font-weight: 800;
+    font-weight: 400;
     text-decoration: none;
     font-style: normal;
-    font-variant: small-caps;
     text-transform: capitalize;
     color: #FFFFFF;
-    text-shadow: 
-        rgba(255, 0, 255, 1)
-        1px
-        0px
-        20px
-    ;
-}
-
-h1.dan {
-    display: inline;
-    font-size: 92px;
+    animation: glowFlicker 0.1s linear infinite;
 }
 
 p {
@@ -154,8 +148,8 @@ p {
     color: #FFFFFF;
     text-shadow:
         rgba(0, 0, 0, 0.5)
-        2px
-        2px
+        1px
+        1px
     ;
     padding: 0px;
 }
@@ -210,14 +204,18 @@ span.system-zap {      color: rgb(255, 0, 0);}
 
 p.foot {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 400;
     margin-top: -2px;
     margin-left: 5px;
     color: #000000;
 }
 
-p.versiontext {
-    font-size: 20px;
+/** ==== WebAmp Location **/
+.webampLocation {
+    content: "";
+    position: fixed;
+    right: 150px;
+    bottom: 225px;
 }
 
 /** ===== Frame ===== */
@@ -227,9 +225,9 @@ p.versiontext {
 
 .frame::before {
     content: "";
-    border: 5px solid white;
-    border-right-width: 5px;
-    box-shadow: 0 0 50px rgba(255, 0, 255, 0.75) inset;
+    border: 2px solid white;
+    border-right-width: 2px;
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.75) inset;
     height: calc(100vh - 30px);
     width: 100vw;
     pointer-events: none;
@@ -276,3 +274,41 @@ p.versiontext {
     border-radius: 10px;
     border: 3px solid #ff9eff;
   }
+
+/** ===== Animations ===== */
+
+@keyframes bgScroll {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: 0px 320px;
+    }
+}
+
+@keyframes glowFlicker {
+    0% {
+        text-shadow: 
+        rgba(255, 0, 255, 1)
+        1px
+        0px
+        20px
+        ;
+    }
+    50% {
+        text-shadow: 
+        rgba(255, 0, 255, 0.9)
+        1px
+        0px
+        20px
+        ;
+    }
+    100% {
+        text-shadow: 
+        rgba(255, 0, 255, 0.75)
+        1px
+        0px
+        20px
+        ;
+    }
+}
