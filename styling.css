@@ -4,21 +4,17 @@
 
 @font-face {
     font-family: 'Bitmgothic';
-    src: url(.lib//Bitmgothic/Bitmgothic.ttf) format(truetype)
+    font-display: swap;
+    src: local('Bitmgothic'),
+        url('lib/Bitmgothic/Bitmgothic.woff') format('woff2'),
+        url('lib/Bitmgothic/Bitmgothic.ttf') format('truetype');
 }
-
-/*
-@font-face {
-    font-family: 'galmuri9';
-    src: url(./"galmuri9"/"galmuri9".tff) format(truetype)
-}
-*/
 
 /** ===== General ===== */
 
 body {
     background:
-        url("lib/stars.gif")
+        url("./lib/stars.gif")
         black
         repeat
     ;
@@ -130,7 +126,7 @@ main {
 /** ===== Text ===== */
 
 h1 {
-    font-family: "Bitmgothic", cursive;
+    font-family: "Bitmgothic";
     display: inline;
     font-size: 92px;
     letter-spacing: 1px;

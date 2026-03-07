@@ -1,6 +1,6 @@
 :::ABOUT BITMGOTHIC:::
 
-BitmGothic is a free font created by Nomi in the summer of 2012.
+BitmGothic is a free font created by Nomi in the summer of 2013.
 
 With this font, you can:
 1. Use it freely either for your personal letters or for your commercial products.
