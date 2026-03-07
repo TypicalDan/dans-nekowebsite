@@ -6,8 +6,8 @@
     font-family: 'Bitmgothic';
     font-display: swap;
     src: local('Bitmgothic'),
-        url('lib/Bitmgothic/Bitmgothic.woff') format('woff2'),
-        url('lib/Bitmgothic/Bitmgothic.ttf') format('truetype');
+        url('./lib/Bitmgothic/Bitmgothic.woff') format('woff2'),
+        url('./lib/Bitmgothic/Bitmgothic.ttf') format('truetype');
 }
 
 /** ===== General ===== */
