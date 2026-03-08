@@ -24,7 +24,7 @@ body {
     width: 100vw;
     position: absolute;
     overflow-x: hidden;
-    animation: bgScroll 10s linear infinite;
+    animation: bgScroll 7s linear infinite;
 }
 
 /** ===== Layout ===== */
@@ -65,13 +65,18 @@ body {
 
 .sideBar {
     grid-area: sideBar;
-    border: 5px solid #330066;
+    border: 2px solid #330066;
     padding: 20px;
-    background-color: #100020;
+    background: linear-gradient(
+        0deg,
+        #0f001f 0%,
+        #14002acb 100%
+        );
     box-shadow:
-        rgba(0, 0, 20, 0.5)
+        rgba(0, 0, 0, 0.75)
         10px
         10px
+        3px
     ;
 }
 
@@ -100,25 +105,35 @@ main {
 }
 
 .post {
-    border: 5px solid #330066;
+    border: 2px solid #330066;
     padding: 10px;
-    background-color: #100020;
+    background: linear-gradient(
+        0deg,
+        #0f001f 0%,
+        #14002acb 100%
+        );
     box-shadow:
-        rgba(0, 0, 20, 0.5)
+        rgba(0, 0, 0, 0.75)
         10px
         10px
+        3px
     ;
 }
 
 .controls {
     grid-area: controls;
-    border: 5px solid #330066;
+    border: 2px solid #330066;
     padding: 0px;
-    background-color: #100020;
+    background: linear-gradient(
+        0deg,
+        #0f001f 0%,
+        #14002acb 100%
+        );
     box-shadow:
-        rgba(0, 0, 20, 0.5)
+        rgba(0, 0, 0, 0.75)
         10px
         10px
+        3px
     ;
     margin-right: 10px;
 }
@@ -290,7 +305,7 @@ p.foot {
         background-position: 0px 0px;
     }
     100% {
-        background-position: 0px 320px;
+        background-position: 0px 154px;
     }
 }
 
