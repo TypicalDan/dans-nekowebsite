@@ -33,9 +33,11 @@ TODO: Figure out how to do statuses (possibly just assume based on the date)
 <!-- BODY -->
 <body>
 <div class="frame">
+    <!-- webamp locator -->
     <div class="webampLocation">
         <div id="app"></div>
     </div>
+    <!-- content -->
     <div class="center">
         <div class="grid">
             <div class="status">
@@ -95,7 +97,8 @@ TODO: Figure out how to do statuses (possibly just assume based on the date)
                 </div>
             </main>
             <div class="controls">
-                <p>nothing here at the moment...</p>
+                <audio id="bgm" src="./bgm.mp3" autoplay loop></audio>
+                <button onclick="toggleBGM()" type="button"><p id="bgmToggle">>></p></button>
             </div>
         </div>
     </div>
@@ -105,6 +108,28 @@ TODO: Figure out how to do statuses (possibly just assume based on the date)
 </div>
 </tr>
 </table>
+
+<!-- BGM  SCRIPT -->
+<script>
+let bgm = document.getElementById("bgm");
+let text = document.getElementById("bgmToggle");
+
+buttonText = "false";
+
+function toggleBGM() {
+    if (bgm.paused) {
+        bgm.play();
+        text.innerHTML = "||";
+    } else {
+        bgm.pause();
+        text.innerHTML = ">>";
+    }
+}
+
+</script>
+
+
+<!-- WEBAMP SCRIPT -->
 <script type="module">
 // Import from the source
 import Webamp from "https://unpkg.com/webamp@^2";
