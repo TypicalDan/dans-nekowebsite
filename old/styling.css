@@ -1,0 +1,337 @@
+/** ===== IMPORTS ===== */
+
+@import url('https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+@font-face {
+    font-family: 'Bitmgothic';
+    font-display: swap;
+    src: local('Bitmgothic'),
+        url('./lib/Bitmgothic/Bitmgothic.woff') format('woff2'),
+        url('./lib/Bitmgothic/Bitmgothic.ttf') format('truetype');
+}
+
+/** ===== General ===== */
+
+body {
+    background:
+        url("./lib/stars.gif")
+        black
+        repeat
+    ;
+    margin: 0px;
+    padding: 0px; 
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    overflow-x: hidden;
+    animation: bgScroll 7s linear infinite;
+}
+
+/** ===== Layout ===== */
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.grid {
+    display: grid;
+    height: 80%;
+    width: calc(60% + 2px);
+    min-width: 600px;
+    grid-template-columns: 0.75fr 1fr 1fr;
+    grid-template-rows: 0.25fr 1fr 0.05fr;
+    grid-template-areas:
+        "status     title           title"
+        "sideBar    main            main"
+        "sideBar    controls     controls"
+    ;
+    grid-gap: 0.4rem;
+}
+
+.title {
+    grid-area: title;
+    align-items: left;
+    padding: 20px;
+    padding-left: 40px;
+}
+
+.logo {
+    text-align: right;
+    width: 230px;
+}
+
+.sideBar {
+    grid-area: sideBar;
+    border: 2px solid #330066;
+    padding: 20px;
+    background: linear-gradient(
+        0deg,
+        #0f001f 0%,
+        #14002acb 100%
+        );
+    box-shadow:
+        rgba(0, 0, 0, 0.75)
+        10px
+        10px
+        3px
+    ;
+}
+
+main {
+    overflow-y: scroll;
+    grid-area: main;
+    scrollbar-width: none;
+}
+
+.status {
+    overflow-y: scroll;
+    grid-area: status;
+    scrollbar-width: none;
+    padding-left: 10px;
+    background-color: rgba(0, 0, 20, 0.5);
+    margin: 5px;
+    margin-bottom: -5px;
+}
+
+.postsVertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.post {
+    border: 2px solid #330066;
+    padding: 10px;
+    background: linear-gradient(
+        0deg,
+        #0f001f 0%,
+        #14002acb 100%
+        );
+    box-shadow:
+        rgba(0, 0, 0, 0.75)
+        10px
+        10px
+        3px
+    ;
+}
+
+.controls {
+    grid-area: controls;
+    border: 2px solid rgb(51, 0, 102);
+    padding: 0px;
+    background: linear-gradient(
+        0deg,
+        rgb(15, 0, 31) 0%,
+        rgba(20, 0, 42, 0.796) 100%
+        );
+    box-shadow:
+        rgba(0, 0, 0, 0.75)
+        10px
+        10px
+        3px
+    ;
+    margin-right: 10px;
+}
+
+/** ===== Text ===== */
+
+h1 {
+    font-family: "Bitmgothic";
+    display: inline;
+    font-size: 92px;
+    letter-spacing: 1px;
+    word-spacing: 0px;
+    line-height: 50px;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: normal;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    animation: glowFlicker 0.1s linear infinite;
+}
+
+p {
+    font-family: "galmuri9", sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    word-spacing: -1px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    line-height: 20px;
+    font-weight: 580;
+    text-decoration: none;
+    font-style: normal;
+    color: #FFFFFF;
+    text-shadow:
+        rgba(0, 0, 0, 0.5)
+        1px
+        1px
+    ;
+    padding: 0px;
+}
+
+h2 {
+    font-family: "galmuri9", sans-serif;
+    font-size: 21px;
+    letter-spacing: 2px;
+    word-spacing: -5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    line-height: 40px;
+    font-weight: 600;
+    text-decoration: none;
+    font-style: normal;
+    color: #FFFFFF;
+    text-shadow:
+        rgba(0, 0, 0, 0.5)
+        2px
+        2px
+    ;
+    padding: 0px;
+}
+
+h3 {
+    font-family: "galmuri9", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    word-spacing: -5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    line-height: 35px;
+    font-weight: 600;
+    text-decoration: none;
+    font-style: normal;
+    color: #FFFFFF;
+    text-shadow:
+        rgba(0, 0, 0, 0.5)
+        2px
+        2px
+    ;
+    padding: 0px;
+}
+
+span.status-discord {  color: rgb(0, 255, 0);}
+span.status-vrchat {   color: rgb(0, 255, 0);}
+span.system-bot {      color: rgb(0, 255, 0);}
+span.system-watch {    color: rgb(0, 255, 0);}
+span.system-leash {    color: rgb(0, 255, 0);}
+span.system-brr {      color: rgb(255, 0, 0);}
+span.system-zap {      color: rgb(255, 0, 0);}
+
+p.foot {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: -2px;
+    margin-left: 5px;
+    color: #000000;
+}
+
+/** ==== WebAmp Location */
+
+.webampLocation {
+    content: "";
+    position: fixed;
+    right: 150px;
+    bottom: 225px;
+}
+
+/** ===== Frame ===== */
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+.frame::before {
+    content: "";
+    border: 2px solid white;
+    border-right-width: 2px;
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.75) inset;
+    height: calc(100vh - 30px);
+    width: 100vw;
+    pointer-events: none;
+    position: fixed;
+    background:
+        linear-gradient(
+            0deg,
+            rgba(100, 0, 255, 0.3) 0%,
+            rgba(0, 0, 125, 0.2) 20%,
+            rgba(0, 0, 0, 0) 70%,
+            rgba(0, 0, 0, 1) 100%
+        )
+        no-repeat
+    ;
+}
+
+.footer {
+    background-color: white;
+    padding: 5px;
+    width: 100vw;
+    height: 30px;
+    position: fixed;
+    bottom: 0px;
+}
+
+/** ===== Scrollbar ===== */
+
+  /*? Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #ff9eff #ffffff;
+  }
+
+  /*? Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #ff9eff;
+    border-radius: 10px;
+    border: 3px solid #ff9eff;
+  }
+
+/** ===== Animations ===== */
+
+@keyframes bgScroll {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: 0px 154px;
+    }
+}
+
+@keyframes glowFlicker {
+    0% {
+        text-shadow: 
+        rgba(255, 0, 255, 1)
+        1px
+        0px
+        20px
+        ;
+    }
+    50% {
+        text-shadow: 
+        rgba(255, 0, 255, 0.9)
+        1px
+        0px
+        20px
+        ;
+    }
+    100% {
+        text-shadow: 
+        rgba(255, 0, 255, 0.75)
+        1px
+        0px
+        20px
+        ;
+    }
+}

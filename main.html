@@ -1,135 +1,112 @@
-<!DOCTYPE html>
-<!--
-This code is absolute dogshit, please don't use it as reference
+<!--# layout file="./layouts/page.html" -->
 
-TODO: To Do's go here:
-TODO: Sort socials grid
-TODO: Feeling...
-TODO: Status Cafe
-TODO: Navbar Buttons
-TODO: Music Section (Song of the week + Music Page)
-TODO: Mmmfghh... Section
-TODO: Down, Bad Section
-TODO: Guestbook
-TODO: Status Cafe
-TODO: DnD Link Wall
-TODO: Shrines (Minecraft, VRChat)
-TODO: Figure out how to do statuses (possibly just assume based on the date)
--->
-<html>
+<!--# block name="theme" -->
+<style>
+:root {
+    --background-image:         url("./fallback.png");
+    --background-colour:        black;
 
-<!-- HEAD -->
-<head>
-<!-- IMPORTS -->
-<link rel="stylesheet" href="styling.css">
-<link rel="stylesheet" href="audioPlayer.css">
-<script type="text/javascript" src="jquery-3.3.1.js"></script>
-<script src="js/YourExternalJQueryScripts.js"></script>
+    --overlay-gradient:         linear-gradient(
+                                    0deg,
+                                    rgba(0, 0, 0, 1) 0%,
+                                    rgba(0, 0, 0, 0) 20%,
+                                    rgba(0, 0, 0, 0) 80%,
+                                    rgba(0, 0, 0, 1) 100%
+                                );
 
-<title>Dan's</title>
-<!--<link rel="icon", href="none.ico">-->
-</head>
+    --frame-colour:             rgb(255, 255, 255);
+    --frame-text-colour:        rgb(0, 0, 0);
+    --frame-glow:               rgba(255, 255, 255, 0.75);
 
-<!-- BODY -->
-<body>
-<div class="frame">
-    <!-- webamp locator -->
-    <div class="webampLocation">
-        <div id="app"></div>
-    </div>
-    <!-- content -->
-    <div class="center">
-        <div class="grid">
-            <div class="status">
-                <p>
-                    > system status dan<br>
-                    site: <span class="status-discord">[ONLINE]</span><br>
-                    end of system list...
-                </p>
+    --window-border:            rgb(19, 19, 19);
+    --window-background-top:    rgba(218, 218, 218, 0.75);
+    --window-background-bottom: rgba(170, 170, 170, 1);
+    --window-shadow:            rgba(0, 0, 0, 0.75);
 
-            </div>
-            <div class="title">
-                <div class="logo">
-                    <h1>Typical Dan</h1>
-                </div>
-            </div>
-            <div class="sideBar">
+    --logo-font:                "Bitmgothic";
+    --logo-colour:              rgb(0, 0, 0);
+    --logo-glow:                rgba(0, 0, 0, 0.75);
 
-            </div>
-            <main>
-                <div class="postsVertical">
-                    <div class="post">
-                        <p>hi I'm Dan, a pretty typical netizen.</p>
-                    </div>
-                    <div class="post">
-                        <h2># welcome to my page!</h2>
-                        <p>
-                            this page is supposed to be a little peek into my head, what I like and do etc.<br>
-                            I'm not a fan of posting my thoughts on traditional social media, but I still want a place to express myself.<br>
-                            That's here!<br><br>
+    --font-colour:              rgb(0, 0, 0);
+    --font-shadow:              rgba(0, 0, 0, 0.5);
 
-                            the net's my place to hang out and talk with my friends, working on projects or playing video games. that's to say, it's somewhere very special to me. with the landscape online changing so much, the return to a simpler,
-                            free-er netscape is really needed in my opinion.<br><br>
+    --p-size:                   12px;
+    --h2-size:                  21px;
+    --h3-size:                  16px;
 
-                            I'm going to be working on this site for quite a while, I've only just gotten started, and I hope to show you all the
-                            things I like and what makes me tick! enjoy your stay!
-                        </p>
-                    </div>
-                    <div class="post">
-                        <h2># socials</h2>
-                        <p>You can find me here:</p>
-                        <object
-                            type="image/svg+xml"
-                            data="https://vrc.dissonant.dev/usr_31ca8316-03d7-4a0c-a0ff-e5f91f8958ac/small.svg?width=325&ingame_only=true&foreground_color=FFFFFF&background_color=17002E"
-                            width="325"
-                            height="150"
-                            title="My VRChat status"
-                            style="color-scheme: light;"
-                        ></object>
-                    </div>
-                    <div class="post">
-                        <h2># updates</h2>
-                        <p>
-                            8th Mar 2026: Edited Styling slightly.<br>
-                            7th Mar 2026: Uploaded to nekoweb. Hello World!
-                        </p>
-                    </div>
-                </div>
-            </main>
-            <div class="controls">
-                <audio id="bgm" src="./bgm.mp3" autoplay loop></audio>
-                <button onclick="toggleBGM()" type="button"><p id="bgmToggle">>></p></button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="footer">
-    <p class="foot">v0.1a | Updated 08/03/2026 01:18 GMT | Hosted by Nekoweb</p>
-</div>
-</tr>
-</table>
-
-<!-- BGM  SCRIPT -->
-<script>
-let bgm = document.getElementById("bgm");
-let text = document.getElementById("bgmToggle");
-
-buttonText = "false";
-
-function toggleBGM() {
-    if (bgm.paused) {
-        bgm.play();
-        text.innerHTML = "||";
-    } else {
-        bgm.pause();
-        text.innerHTML = ">>";
-    }
 }
+</style>
+<!--# endblock -->
 
-</script>
+<!--# block name="head" -->
+<title>dan's site</title>
+<!--<link rel="icon", href="none.ico">-->
+<!--# endblock -->
 
+<!--# block name="status" -->
+<p>
+> system status dan<br>
+site: <span class="status-green">[ONLINE]</span><br>
+end of system list...
+</p>
+<!--# endblock -->
 
-<!-- WEBAMP SCRIPT -->
+<!--# block name="logo" -->
+<h1>Typical Dan</h1>
+<!--# endblock -->
+
+<!--# block name="posts" -->
+<div class="post">
+    <p>hi I'm Dan, a pretty typical netizen.</p>
+</div>
+<div class="post">
+    <h2># welcome to my page!</h2>
+<p>
+    this page is supposed to be a little peek into my head, what I like and do etc.<br>
+    I'm not a fan of posting my thoughts on traditional social media, but I still want a place to express myself.<br>
+    That's here!<br><br>
+
+    the net's my place to hang out and talk with my friends, working on projects or playing video games. that's to say, it's somewhere very special to me. with the landscape online changing so much, the return to a simpler,
+    free-er netscape is really needed in my opinion.<br><br>
+
+    I'm going to be working on this site for quite a while, I've only just gotten started, and I hope to show you all the
+    things I like and what makes me tick! enjoy your stay!
+</p>
+</div>
+<div class="post">
+    <h2># socials</h2>
+    <p>You can find me here:</p>
+    <object
+    type="image/svg+xml"
+    data="https://vrc.dissonant.dev/usr_31ca8316-03d7-4a0c-a0ff-e5f91f8958ac/small.svg?width=325&ingame_only=true&foreground_color=FFFFFF&background_color=17002E"
+    width="325"
+    height="150"
+    title="My VRChat status"
+    style="color-scheme: light;"
+    ></object>
+    <iframe
+    title="Discord user embed"
+    width="340"
+    height="72"
+    frameborder="0"
+    sandbox="allow-scripts"
+    src="https://widgets.vendicated.dev/user?id=446734466648506369&theme=dark&banner=false&full-banner=false&rounded-corners=false&discord-icon=true&badges=false&guess-nitro=false&"
+></iframe>
+</div>
+<div class="post">
+    <h2># updates</h2>
+    <p>
+        8th Mar 2026: Edited Styling slightly.<br>
+        7th Mar 2026: Uploaded to nekoweb. Hello World!
+    </p>
+</div>
+<!--# endblock -->
+
+<!--# block name="bgm"-->
+<audio id="bgm" src="./lib/remains of a corrupted file.mp3" autoplay loop></audio>
+<!--# endblock-->
+
+<!--# block name="webamp" -->
 <script type="module">
 // Import from the source
 import Webamp from "https://unpkg.com/webamp@^2";
@@ -191,5 +168,4 @@ const webamp = new Webamp({
 // Renders it when ready
 webamp.renderWhenReady(document.getElementById("app"));
 </script>
-</body>
-</html>
+<!--# endblock -->

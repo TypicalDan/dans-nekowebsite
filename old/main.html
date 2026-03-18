@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--
+This code is absolute dogshit, please don't use it as reference
+
+TODO: To Do's go here:
+TODO: Credits Section
+TODO: Sort socials grid
+TODO: Feeling...
+TODO: Status Cafe
+TODO: Navbar Buttons
+TODO: Music Section (Song of the week + Music Page)
+TODO: Mmmfghh... Section
+TODO: Down, Bad Section
+TODO: Guestbook
+TODO: Status Cafe
+TODO: DnD Link Wall
+TODO: Shrines (Minecraft, VRChat)
+TODO: Figure out how to do statuses (possibly just assume based on the date)
+-->
+<html>
+
+<!-- HEAD -->
+<head>
+<!-- IMPORTS -->
+<link rel="stylesheet" href="styling.css">
+<link rel="stylesheet" href="audioPlayer.css">
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script src="js/YourExternalJQueryScripts.js"></script>
+
+<title>Dan's</title>
+<!--<link rel="icon", href="none.ico">-->
+</head>
+
+<!-- BODY -->
+<body>
+<div class="frame">
+    <!-- webamp locator -->
+    <div class="webampLocation">
+        <div id="app"></div>
+    </div>
+    <!-- content -->
+    <div class="center">
+        <div class="grid">
+            <div class="status">
+                <p>
+                    > system status dan<br>
+                    site: <span class="status-discord">[ONLINE]</span><br>
+                    end of system list...
+                </p>
+
+            </div>
+            <div class="title">
+                <div class="logo">
+                    <h1>Typical Dan</h1>
+                </div>
+            </div>
+            <div class="sideBar">
+
+            </div>
+            <main>
+                <div class="postsVertical">
+                    <div class="post">
+                        <p>hi I'm Dan, a pretty typical netizen.</p>
+                    </div>
+                    <div class="post">
+                        <h2># welcome to my page!</h2>
+                        <p>
+                            this page is supposed to be a little peek into my head, what I like and do etc.<br>
+                            I'm not a fan of posting my thoughts on traditional social media, but I still want a place to express myself.<br>
+                            That's here!<br><br>
+
+                            the net's my place to hang out and talk with my friends, working on projects or playing video games. that's to say, it's somewhere very special to me. with the landscape online changing so much, the return to a simpler,
+                            free-er netscape is really needed in my opinion.<br><br>
+
+                            I'm going to be working on this site for quite a while, I've only just gotten started, and I hope to show you all the
+                            things I like and what makes me tick! enjoy your stay!
+                        </p>
+                    </div>
+                    <div class="post">
+                        <h2># socials</h2>
+                        <p>You can find me here:</p>
+                        <object
+                            type="image/svg+xml"
+                            data="https://vrc.dissonant.dev/usr_31ca8316-03d7-4a0c-a0ff-e5f91f8958ac/small.svg?width=325&ingame_only=true&foreground_color=FFFFFF&background_color=17002E"
+                            width="325"
+                            height="150"
+                            title="My VRChat status"
+                            style="color-scheme: light;"
+                        ></object>
+                    </div>
+                    <div class="post">
+                        <h2># updates</h2>
+                        <p>
+                            8th Mar 2026: Edited Styling slightly.<br>
+                            7th Mar 2026: Uploaded to nekoweb. Hello World!
+                        </p>
+                    </div>
+                </div>
+            </main>
+            <div class="controls">
+                <audio id="bgm" src="./bgm.mp3" autoplay loop></audio>
+                <button onclick="toggleBGM()" type="button"><p id="bgmToggle">>></p></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p class="foot">v0.1a | Updated 08/03/2026 01:18 GMT | Hosted by Nekoweb</p>
+</div>
+</tr>
+</table>
+
+<!-- BGM  SCRIPT -->
+<script>
+let bgm = document.getElementById("bgm");
+let text = document.getElementById("bgmToggle");
+
+buttonText = "false";
+
+function toggleBGM() {
+    if (bgm.paused) {
+        bgm.play();
+        text.innerHTML = "||";
+    } else {
+        bgm.pause();
+        text.innerHTML = ">>";
+    }
+}
+
+</script>
+
+
+<!-- WEBAMP SCRIPT -->
+<script type="module">
+// Import from the source
+import Webamp from "https://unpkg.com/webamp@^2";
+
+// Init() a webamp
+const webamp = new Webamp({
+    initialTracks: [
+        // SONGS GO HERE
+        {
+            metaData: {artist: "VocaloKAT & Aku P", title: "Affection Addiction",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/1.%20Affection%20Addiction.mp3",
+        },
+        {
+            metaData: {artist: "lexycat", title: "glitter ♪ ₊˚♬ Nightcore",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/2.%20Glitter.mp3",
+        },
+        {
+            metaData: {artist: "Bring Me the Horizon", title: "Drown",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/3.%20Drown.mp3",
+        },
+        {
+            metaData: {artist: "Jamie Paige", title: "BIRDBRAIN",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/4.%20BIRDBRAIN.mp3",
+        },
+        {
+            metaData: {artist: "Tree Palm", title: "i love you la la la",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/5.%20I%20Love%20You%20La%20La%20La.mp3",
+        },
+        {
+            metaData: {artist: "yeule", title: "Dudu",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/6.%20Dudu.mp3",
+        },
+        {
+            metaData: {artist: "NANAOAKARI", title: "逆走少女 - Gyakusou Girl",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/7.%20Gyakusou%20Girl.mp3",
+        },
+        {
+            metaData: {artist: "BAMBEE", title: "Online",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/8.%20Online.mp3",
+        },
+        {
+            metaData: {artist: "System Of A Down", title: "Chic 'N' Stu",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/9.%20Chic%20'N'%20Stu.mp3",
+        },
+        {
+            metaData: {artist: "Clean Bandit Feat. Jess Glynne", title: "Rather Be",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/10.%20Rather%20Be.mp3",
+        },
+        {
+            metaData: {artist: "All Time Low", title: "Therapy",},
+            url: "https://file.garden/aatC7NfiM0cO88gC/music/11.%20Therapy.mp3",
+        },
+    ],
+    initialSkin: {
+        url: "https://file.garden/aatC7NfiM0cO88gC/acid-purple.wsz"
+    }
+});
+
+// Renders it when ready
+webamp.renderWhenReady(document.getElementById("app"));
+</script>
+</body>
+</html>
