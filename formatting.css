@@ -8,8 +8,8 @@
     font-family: 'Bitmgothic';
     font-display: swap;
     src: local('Bitmgothic'),
-        url('./fonts/Bitmgothic.woff') format('woff2'),
-        url('./fonts/Bitmgothic.ttf') format('truetype');
+        url('./lib/fonts/Bitmgothic.woff') format('woff2'),
+        url('./lib/fonts/Bitmgothic.ttf') format('truetype');
 }
 
 /** Background */
@@ -38,7 +38,7 @@ body {
 
 .pageGrid {
     display: grid;
-    height: 80%;
+    height: 70%;
     width: calc(60% + 2px);
     min-width: 600px;
     grid-template-columns: 0.75fr 1fr 1fr;
@@ -54,22 +54,22 @@ body {
 .cardGrid {
     display: grid;
     height: 60%;
-    width: 60%;
-    min-width: 600px;
+    width: 45%;
+    min-width: 450px;
     grid-template-columns: 1fr;
     grid-template-rows: 0.25fr 1fr 0.05fr;
     grid-template-areas:
         "title"
-        "card"
+        "main"
         "controls"
     ;
 }
 
 .title {
     grid-area: title;
-    align-items: left;
+    align-items: center;
+    text-align: center;
     padding: 20px;
-    padding-left: 40px;
 }
 
 .logo {
@@ -137,7 +137,7 @@ main {
 .controls {
     grid-area: controls;
     border: 2px solid var(--window-border);
-    padding: 0px;
+    padding: 5px;
     background: linear-gradient(
         0deg,
         var(--window-background-bottom) 0%,
@@ -158,7 +158,7 @@ main {
     height: 50px;
     width: 97%;
     grid-template-rows: 1fr;
-    grid-template-columns: 0.1fr 1fr 0.1fr;
+    grid-template-columns: 0.1fr 1fr 0.15fr;
     grid-template-areas:
         "itemIcon itemText itemPlatform"
     ;
@@ -197,7 +197,6 @@ main {
         var(--window-background-bottom) 0%,
         var(--window-background-top) 100%
     );
-    margin: 2px;
 }
 
 /** Text */
