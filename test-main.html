@@ -1,6 +1,13 @@
-<!--# layout file="./layout-page.html" -->
-
-<!--# block name="theme" -->
+<!DOCTYPE html>
+<html>
+<head>
+<!------ HEAD ------>
+<link rel="stylesheet" href="formatting.css">
+<!--# block name="head" -->
+<title>dan's site</title>
+<link rel="icon", href="./lib/ty.ico"></link>
+<!--# endblock -->
+<!--# block name="theme"-->
 <style>
 :root {
     --background-colour:        black;
@@ -49,29 +56,44 @@
 }
 </style>
 <!--# endblock -->
+</head>
 
-<!--# block name="head" -->
-<title>dan's site</title>
-<link rel="icon", href="./lib/ty.ico"></link>
-<!--# endblock -->
-
-<!--# block name="status" -->
+<!------ BODY ------>
+<body>
+<div class="frame">
+    <!-- webamp locator -->
+    <div class="webampLocation">
+        <div id="app"></div>
+    </div>
+    <!-- content -->
+    <div class="center">
+        <div class="pageGrid">
+            <div class="status">
+                <!--# block name="status"-->
 <p>
 > system status dan<br>
 site: <span class="status-green">[ONLINE]</span><br>
 end of system list...
 </p>
-<!--# endblock -->
-
-<!--# block name="logo" -->
-<a href="./linktree.html">
+                <!--# endblock -->
+            </div>
+            <div class="title">
+                <div class="logo">
+                    <!--# block name="logo" -->
+<a href="./test-linktree.html">
     <h1>
         Typical<br>Dan
     </h1>
 </a>
-<!--# endblock -->
-
-<!--# block name="posts" -->
+                    <!--# endblock -->
+                </div>
+            </div>
+            <div class="sideBar">
+                <!-- PUT NAVBAR HERE, THEME IT IN THE DEFAULT THEME TOO -->
+            </div>
+            <main>
+                <div class="postsVertical">
+                    <!--# block name="posts" -->
 <div class="post">
     <p>hi I'm Dan, a pretty typical netizen.</p>
 </div>
@@ -140,12 +162,41 @@ end of system list...
         7th Mar 2026: Uploaded to nekoweb. Hello World!
     </p>
 </div>
-<!--# endblock -->
-
-<!--# block name="bgm"-->
+                    <!--# endblock -->
+                </div>
+            </main>
+            <div class="controls">
+                <!--# block name="bgm"-->
 <audio id="bgm" src="./lib/remains of a corrupted file.mp3" autoplay loop></audio>
-<!--# endblock-->
+                <!--# endblock -->
+                <button onclick="toggleBGM()" type="button" class="toggleBGM"><p id="bgmToggle">||</p></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p class="foot">
+        v0.1a | Updated <!--# flastmod file="site.html" fmt="%d %b %Y at %HH:%mm" timezone="Europe/London"--> | Hosted by Nekoweb
+    </p>
+</div>
+</tr>
+</table>
 
+<!-- BGM  SCRIPT -->
+<script>
+let bgm = document.getElementById("bgm");
+let text = document.getElementById("bgmToggle");
+
+function toggleBGM() {
+    if (bgm.paused) {
+        bgm.play();
+        text.innerHTML = "||";
+    } else {
+        bgm.pause();
+        text.innerHTML = ">>";
+    }
+}
+</script>
 <!--# block name="webamp" -->
 <script type="module">
 // Import from the source
@@ -208,4 +259,6 @@ const webamp = new Webamp({
 // Renders it when ready
 webamp.renderWhenReady(document.getElementById("app"));
 </script>
-<!--# endblock -->
+<!--# endblock-->
+</body>
+</html>

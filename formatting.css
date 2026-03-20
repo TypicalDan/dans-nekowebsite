@@ -156,7 +156,7 @@ main {
     align-items: center;
     display: grid;
     height: 50px;
-    width: 97%;
+    width: 99%;
     grid-template-rows: 1fr;
     grid-template-columns: 0.1fr 1fr 0.15fr;
     grid-template-areas:
@@ -198,6 +198,8 @@ main {
         var(--window-background-top) 100%
     );
 }
+
+
 
 /** Text */
 
@@ -294,6 +296,11 @@ p.foot {
 ::selection {
     background-color: var(--select-colour);
     color: var(--select-text-colour);
+}
+
+:hover {
+    border-color: var(--window-hover-border);
+    color: var(--hover-text-colour);
 }
 
 /** Frame */
