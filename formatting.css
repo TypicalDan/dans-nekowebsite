@@ -41,7 +41,7 @@ body {
     height: 70%;
     width: calc(60% + 2px);
     min-width: 600px;
-    grid-template-columns: 0.75fr 1fr 1fr;
+    grid-template-columns: 0.6fr 1fr 1fr;
     grid-template-rows: 0.25fr 1fr 0.05fr;
     grid-template-areas:
         "status     title           title"
@@ -80,7 +80,7 @@ body {
 .sideBar {
     grid-area: sideBar;
     border: 2px solid var(--window-border);
-    padding: 20px;
+    padding: 5px;
     background: linear-gradient(
         0deg,
         var(--window-background-bottom) 0%,
@@ -179,15 +179,31 @@ main {
 
 .itemText {
     display: flex;
-    justify-content: left;
-    align-items: left;
-    padding-left: 10%;
+    justify-content: center;
+    align-items: center;
+    display: inline;
 }
 
 .itemPlatform {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.navbarItem {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 20px;
+    height: 50px;
+    width: 97%;
+    border: 2px solid var(--window-border);
+    margin: 5px;
+    background: linear-gradient(
+        0deg,
+        var(--window-background-bottom) 0%,
+        var(--window-background-top) 100%
+    );
 }
 
 .toggleBGM {
@@ -240,6 +256,7 @@ p {
 
 a {
     text-decoration: none;
+    color: var(--link-colour);
 }
 
 h2 {
